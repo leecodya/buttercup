@@ -1,0 +1,83 @@
+body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
+body, html {
+    height: 100%;
+    line-height: 1.8;
+}
+
+img{border-radius:15px;}
+
+/* Full height image header */
+.bgimg-2 {
+    background-position: center;
+    background-size: cover;
+    background-image: url("img/supplies2.jpg");
+    height: 100%;
+	margin-top: 43px;
+	padding-top: 15%
+}
+
+.w3-bar .w3-button {
+    padding: 16px;
+}
+
+.myColor{background-color: #a01394; color: #39ff14}
+.myColor2{background-color: #39ff14; color: #a01394}
+
+.w3-bar-item {
+    -webkit-transition-duration: 0.5s; 
+    transition-duration: 0.5s;
+	text-decoration:none;
+}
+
+.w3-button1:hover {
+    background-color: #39ff14; 
+    color:#a01394;
+}
+
+.w3-button2:hover{
+	background-color: #a01394;
+	color: #39ff14;
+}
+
+.NoBullet{
+list-style-type:none;
+}
+
+.NoUnderline{
+text-decoration:none;
+}
+.NoUnderline:hover{
+text-decoration:underline;
+}
+
+.italics{font-style:italic}
+.bold{font-weight:bold}
+.underline{text-decoration:underline;}
+.NeonGreen{color:#39ff14; text-shadow: 2px 2px black}
+#mySidebar:hover{
+	background-color: #39ff14; 
+    color:#a01394;}
+	
+#work-pics img{border-radius:40px}
+
+table{
+	border-collapse: collapse;
+}
+
+table, th, td{
+	border: 1px solid purple;
+}
+
+td{
+	padding:10px;
+	text-align:center;
+}
+	
+@media only screen and (max-width: 300px){
+	.bgimg-2{
+		margin-top: 120px;
+		padding-top: 25%;
+		height:90%
+	}
+	#about{margin-top:150px}
+}

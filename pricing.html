@@ -1,150 +1,46 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Pricing</title>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
-	<link rel="stylesheet" href="css.css">
-	<link rel="shortcut icon" href="favicon(1).ico" type="image/x-icon">
-	<link rel="icon" href="favicon(1).ico" type="image/x-icon">
-</head>
-<body>
-
-<!-- Navbar (sit on top) -->
-<div class="w3-top">
-  <div class="w3-bar w3-card-2 myColor" id="myNavbar">
-    <a href="index.html" class="w3-bar-item w3-button1 w3-wide w3-large"><strong>BUTTERCUP CLEANING</strong></a>
-    <!-- Right-sided navbar links -->
-    <div class="w3-right w3-hide-small">
-	  
-      <a href="index.html#about" class="w3-bar-item w3-button1 w3-wide w3-large"><strong>ABOUT</strong></a>
-      <a href="index.html#team" class="w3-bar-item w3-button1 w3-wide w3-large"><i class="fa fa-user"></i><strong> TEAM</strong></a>
-      <a href="work.html" class="w3-bar-item w3-button1 w3-wide w3-large"><i class="fa fa-th"></i><strong> WORK</strong></a>
-      <a href="pricing.html" class="w3-bar-item w3-button1 w3-wide w3-large"><i class="fa fa-usd"></i><strong> PRICING</strong></a>
-	  <a href="services.html" class="w3-bar-item w3-button1 w3-wide w3-large"><i class="fa fa-wrench"></i><strong> SERVICES</strong></a>
-      <a href="index.html#contact" class="w3-bar-item w3-button1 w3-wide w3-large"><i class="fa fa-envelope"></i><strong> CONTACT</strong></a>
-    </div>
-    <!-- Hide right-floated links on small screens and replace them with a menu icon -->
-
-    <a href="javascript:void(0)" class="w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium" onclick="w3_open()">
-      <i class="fa fa-bars"></i>
-    </a>
-  </div>
-</div>
-
-<!-- Sidebar on small screens when clicking the menu icon -->
-<nav class="w3-sidebar w3-bar-block myColor w3-card-2 w3-animate-left w3-hide-medium w3-hide-large" style="display:none" id="mySidebar">
-  <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button1 w3-large w3-padding-16">Close</a>
-  <a href="index.html#about" onclick="w3_close()" class="w3-bar-item w3-button1">ABOUT</a>
-  <a href="index.html#team" onclick="w3_close()" class="w3-bar-item w3-button1">TEAM</a>
-  <a href="work.html" onclick="w3_close()" class="w3-bar-item w3-button1">WORK</a>
-  <a href="pricing.html" onclick="w3_close()" class="w3-bar-item w3-button1">PRICING</a>
-  <a href="services.html" onclick="w3_close()" class="w3-bar-item w3-button1">SERVICES</a>
-  <a href="index.html#contact" onclick="w3_close()" class="w3-bar-item w3-button1">CONTACT</a>
-</nav>
-
 <!-- Header with full-height image -->
-<header class="bgimg-2 w3-display-container w3-grayscale-min" id="home">
-	<div class="w3-text-purple w3-center bold">    
-		<span class="w3-xxxlarge NeonGreen">BUTTERCUP'S CLEANING SERVICE</span>
-	 </div> 
+<header class="bgimg-2">
+    <div class="text-center bold">
+        <h1 class="NeonGreen">BUTTERCUP'S CLEANING SERVICE</h1>
+    </div>
 </header>
 
 <!--Page Content-->
-<div class="w3-container" style="padding:64px 16px" id="about">
-	<div class="w3-xxxlarge w3-text-purple w3-text-bold w3-center"><strong>PRICING</strong></div>
-	<div class="w3-row-padding w3-text-purple" style="margin-top:64px; text-align:center">
-		<table class="w3-xlarge" style="padding:3px; margin: 0 auto; width:80%">
-			<tr>
-				<th colspan="2">ONE-TIME FEE OF $150.OO</th>
-			</tr>
-			<tr>
-				<th>Duration of Service</th>
-				<th>Cost</th>
-			</tr>
-			<tr>
-				<td>Twice a month</td>
-				<td>$150 + $150 one-time fee</td>
-			</tr>
-			<tr>
-				<td>Once a month</td>
-				<td>$75 + $150 one-time fee</td>
-			</tr>
-			<tr>
-				<td>Three times a month</td>
-				<td>$225 + $150 one-time fee</td>
-			</tr>
-			<tr>
-				<td>Four times a month</td>
-				<td>$300 + $150 one-time fee</td>
-			</tr>
-			<tr>
-				<td colspan="2">*After the one-time fee, the price goes to $75.00 every week. <br>**The cost of your home cleaning depends on the size of your home and the type of service you choose. </td>
-			</tr>
-		</table>
-		<h3><a href="index.html#contact">Contact Buttercup cleaning service for an estimate!</a></h3>
-	</div>
+<div class="container" style="padding:64px 16px" id="about">
+    <h2 class="bold text-center">PRICING</h2>
+    <div class="row justify-content-center" style="margin-top:64px;">
+        <div class="col-md-10">
+            <table class="table table-striped table-bordered">
+                <tr>
+                    <th class="text-center" colspan="2">ONE-TIME FEE OF $150.00</th>
+                </tr>
+                <tr class="text-center" style="font-size:larger">
+                    <th>Duration of Service</th>
+                    <th>Cost</th>
+                </tr>
+                <tr>
+                    <td>Twice a month</td>
+                    <td>$150 + $150 one-time fee</td>
+                </tr>
+                <tr>
+                    <td>Once a month</td>
+                    <td>$75 + $150 one-time fee</td>
+                </tr>
+                <tr>
+                    <td>Three times a month</td>
+                    <td>$225 + $150 one-time fee</td>
+                </tr>
+                <tr>
+                    <td>Four times a month</td>
+                    <td>$300 + $150 one-time fee</td>
+                </tr>
+                <tr>
+                    <td colspan="2">*After the one-time fee, the price goes to $75.00 every week. <br>**The cost of your
+                        home
+                        cleaning depends on the size of your home and the type of service you choose. </td>
+                </tr>
+            </table>
+            <h3 class="text-center"><a href="#contact">Contact Buttercup cleaning service for an estimate!</a></h3>
+        </div>
+    </div>
 </div>
-
-<!-- Footer -->
-<footer class="w3-center myColor w3-padding-64">
-  <a href="#home" class="w3-button1 w3-padding-33"><i class="fa fa-arrow-up w3-margin-right"></i>To the top</a>
-  <div class="w3-xlarge w3-section">
-    <a href="https://www.facebook.com/danielle.poteat.141210/?fref=ts" target="_blank"><i class="fa fa-facebook-official w3-hover-opacity"></i></a>
-  </div>
-  <!--<p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank" class="w3-hover-text-green">w3.css</a></p>-->
-</footer>
-
-<!-- Add Google Maps -->
-<script>
-function myMap()
-{
-  myCenter=new google.maps.LatLng(41.878114, -87.629798);
-  var mapOptions= {
-    center:myCenter,
-    zoom:12, scrollwheel: false, draggable: false,
-    mapTypeId:google.maps.MapTypeId.ROADMAP
-  };
-  var map=new google.maps.Map(document.getElementById("googleMap"),mapOptions);
-
-  var marker = new google.maps.Marker({
-    position: myCenter,
-  });
-  marker.setMap(map);
-}
-
-// Modal Image Gallery
-function onClick(element) {
-  document.getElementById("img01").src = element.src;
-  document.getElementById("modal01").style.display = "block";
-  var captionText = document.getElementById("caption");
-  captionText.innerHTML = element.alt;
-}
-
-
-// Toggle between showing and hiding the sidebar when clicking the menu icon
-var mySidebar = document.getElementById("mySidebar");
-
-function w3_open() {
-    if (mySidebar.style.display === 'block') {
-        mySidebar.style.display = 'none';
-    } else {
-        mySidebar.style.display = 'block';
-    }
-}
-
-// Close the sidebar with the close button
-function w3_close() {
-    mySidebar.style.display = "none";
-}
-</script>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBu-916DdpKAjTmJNIgngS6HL_kDIKU0aU&callback=myMap"></script>
-<!--
-To use this code on your website, get a free API key from Google.
-Read more at: https://www.w3schools.com/graphics/google_maps_basic.asp
--->
-</body>
-</html>

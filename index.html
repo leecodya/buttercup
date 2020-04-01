@@ -1,290 +1,90 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-	<title>Buttercup Cleaning Service</title>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
-	<link rel="stylesheet" href="css.css">
-	<link rel="shortcut icon" href="favicon(1).ico" type="image/x-icon">
-	<link rel="icon" href="favicon(1).ico" type="image/x-icon">
+    <title>Buttercup Cleaning Service</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">    
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>    
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 </head>
-<body>
 
-<!-- Navbar (sit on top) -->
-<div class="w3-top">
-  <div class="w3-bar w3-card-2 myColor" id="myNavbar">
-    <a href="index.html" class="w3-bar-item w3-button1 w3-wide w3-large"><strong>BUTTERCUP CLEANING</strong></a>
-    <!-- Right-sided navbar links -->
-    <div class="w3-right w3-hide-small">
-	  
-      <a href="index.html#about" class="w3-bar-item w3-button1 w3-wide w3-large"><strong>ABOUT</strong></a>
-      <a href="index.html#team" class="w3-bar-item w3-button1 w3-wide w3-large"><i class="fa fa-user"></i><strong> TEAM</strong></a>
-      <a href="work.html" class="w3-bar-item w3-button1 w3-wide w3-large"><i class="fa fa-th"></i><strong> WORK</strong></a>
-      <a href="pricing.html" class="w3-bar-item w3-button1 w3-wide w3-large"><i class="fa fa-usd"></i><strong> PRICING</strong></a>
-	  <a href="services.html" class="w3-bar-item w3-button1 w3-wide w3-large"><i class="fa fa-wrench"></i><strong> SERVICES</strong></a>
-      <a href="index.html#contact" class="w3-bar-item w3-button1 w3-wide w3-large"><i class="fa fa-envelope"></i><strong> CONTACT</strong></a>
-    </div>
-    <!-- Hide right-floated links on small screens and replace them with a menu icon -->
+<body ng-app="myApp">
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-md myColor "><!--bg-dark navbar-dark-->
+        <!-- Brand -->
+        <a class="navbar-brand" href="#home"><strong>BUTTERCUP CLEANING</strong></a>
 
-    <a href="javascript:void(0)" class="w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium" onclick="w3_open()">
-      <i class="fa fa-bars"></i>
-    </a>
-  </div>
-</div>
+        <!-- Toggler/collapsibe Button -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#myNavbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
-<!-- Sidebar on small screens when clicking the menu icon -->
-<nav class="w3-sidebar w3-bar-block myColor w3-card-2 w3-animate-left w3-hide-medium w3-hide-large" style="display:none" id="mySidebar">
-  <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button1 w3-large w3-padding-16">Close</a>
-  <a href="index.html#about" onclick="w3_close()" class="w3-bar-item w3-button1">ABOUT</a>
-  <a href="index.html#team" onclick="w3_close()" class="w3-bar-item w3-button1">TEAM</a>
-  <a href="work.html" onclick="w3_close()" class="w3-bar-item w3-button1">WORK</a>
-  <a href="pricing.html" onclick="w3_close()" class="w3-bar-item w3-button1">PRICING</a>
-  <a href="services.html" onclick="w3_close()" class="w3-bar-item w3-button1">SERVICES</a>
-  <a href="index.html#contact" onclick="w3_close()" class="w3-bar-item w3-button1">CONTACT</a>
-</nav>
+        <!-- Navbar links -->
+        <div class="collapse navbar-collapse justify-content-end" id="myNavbar">
+            <ul class="navbar-nav">
+                <li onclick="closeMenu()" class="nav-item">
+                    <a href="#home" class="nav-link"><strong>Home</strong></a>
+                </li>
+                <li onclick="closeMenu()" class="nav-item">
+                    <a href="#services" class="nav-link"><strong>Services</strong></a>
+                </li>
+                <!-- <li onclick="closeMenu()" class="nav-item">
+                    <a href="#work" class="nav-link"><strong>Work</strong></a>
+                </li> -->
+                <li onclick="closeMenu()" class="nav-item">
+                    <a href="#pricing" class="nav-link"><strong>Pricing</strong></a>
+                </li>
+                <li onclick="closeMenu()" class="nav-item">
+                    <a href="#contact" class="nav-link"><strong>Contact</strong></a>
+                </li>
+            </ul>
+        </div>
+    </nav>
 
-<!-- Header with full-height image -->
-<header class="bgimg-2 w3-display-container w3-grayscale-min" id="home">
-	<a href="https://www.facebook.com/danielle.poteat.141210/?fref=ts" class="w3-bar-item NeonGreen w3-xxxlarge w3-display-topmiddle" target="_blank"><i class="fa fa-facebook-official" style="padding: 20px; margin-bottom:5px"></i></a>
-	<div class="NeonGreen w3-center bold">    
-		<span class="w3-xxxlarge" id="words">BUTTERCUP'S CLEANING SERVICE</span><br>
-		<span class="w3-xxlarge">Home and Office Cleaning Services</span><br>
-		<span class="w3-xlarge italics">"If Buttercup can't clean it, no one can!"</span>		
-	 </div> 
-</header>
+    <div ng-view></div>
 
-<!-- About Section -->
-<div class="w3-container w3-text-purple w3-xlarge" style="padding-top:100px" id="about">
-  <h2 class="w3-center">SERVICES OFFERED</h2>
-  <div class="w3-row-padding w3-center" style="margin-top:64px">
-    <div class="w3-quarter">
-      <i class="fa fa-bath w3-margin-bottom w3-jumbo w3-center"></i>
-      <p class="w3-xlarge bold">BATHROOMS</p>
-      <ul class="NoBullet w3-left">
-		<li>Toilets, Counters, Mirrors, Sinks, Showers, Floors</li>
-	  </ul>
-    </div>
-    <div class="w3-quarter">
-      <i class="fa fa-bed w3-margin-bottom w3-jumbo"></i>
-      <p class="w3-xlarge bold">BEDROOMS</p>
-      <ul class="NoBullet w3-left">
-		<li>Make the beds, Vacuum, Dust furniture, Floors</li>
-	  </ul>
-    </div>
-    <div class="w3-quarter">
-      <i class="fa fa-cutlery w3-margin-bottom w3-jumbo"></i>
-      <p class="w3-xlarge bold">KITCHENS</p>
-      <ul class="NoBullet w3-left">
-		<li>Sink, Refrigerator/freezer, Stove, Dishwasher, Floors</li>
-	  </ul>
-    </div>
-    <div class="w3-quarter">
-      <i class="fa fa-tv w3-margin-bottom w3-jumbo"></i>
-      <p class="w3-xlarge bold">FAMILY ROOMS</p>
-      <ul class="NoBullet w3-left">
-		<li>Dust furniture, Wipe fan blades and globes, Floors</li>
-	  </ul>
-    </div>
-  </div>
-  <p style="text-align:center"><a href="services.html" class="w3-bar-item w3-button1 NoUnderline w3-padding-large w3-large w3-margin-top">Want to learn more? Click here!</a></p>
-</div>
+    <!-- Footer -->
+    <footer class="myColor p-3">
+        <span class="container" style="color:white;"><b>Buttercup's Cleaning Service | &copy; 2020 | Created by: <a href="https://codyalee.com" target="_blank">Cody Lee</a></b></span>
+    </footer>
 
-<!-- Team Section -->
-<div class="w3-container w3-light-grey" style="padding:128px 16px" id="team">
-  <h3 class="w3-center">THE TEAM</h3>
-  <p class="w3-center w3-large">The ones who runs this company</p>
-  <div class="w3-row w3-xlarge" style="margin-top:64px">
-		<div class="w3-col w3-container" style="width:25%"></div>
-		<div class="w3-col w3-margin-bottom w3-container  myColor" style="width:50%;">
-		  <div class="w3-card-2 w3-center"   style="padding-top:30px;">
-			<img src="img/Danielle.jpg" alt="Danielle" style="width:30%">
-			<div class="w3-container">
-			  <h3>Danielle Poteat</h3>
-			  <p class="w3-opacity italics">Founder</p>
-			  <p>Hey everyone! I am Danielle, the founder of Buttercup Cleaning Service. I am a hard-working, trustworthy and motivated single mother of three. We are one the cheapest cleaning services around, but are also one the most thorough. Cleaning is m passion so I will make sure that your place of residence gets the best quality clean!  </p>
-			  <a class="myColor2 NoUnderline" href="#contact" style="padding:10px"><i class="fa fa-envelope">Contact</i></a>
-			</div><br>
-		  </div>
-		</div>
-		<div class="w3-col w3-container" style="width:25%"></div>
-  </div>
-</div>
+    <script>
+        var app = angular.module("myApp", ["ngRoute"]);
+        app.config(function ($routeProvider) {
+            $routeProvider
+                .when("/home", {
+                    templateUrl: "home.html"
+                })
+                .when("/work", {
+                    templateUrl: "work.html"
+                })
+                .when("/contact", {
+                    templateUrl: "contact.html"
+                })
+                .when("/services", {
+                    templateUrl: "services.html"
+                })
+                .when("/pricing", {
+                    templateUrl: "pricing.html"
+                })
+                .otherwise({
+                    templateUrl: "home.html"
+                });
+        });
 
-<!-- Promo Section "Statistics" -->
-<!--<div class="w3-container w3-row w3-center w3-dark-grey w3-padding-64">
-  <div class="w3-quarter">
-    <span class="w3-xxlarge">14+</span>
-    <br>Partners
-  </div>
-  <div class="w3-quarter">
-    <span class="w3-xxlarge">55+</span>
-    <br>Projects Done
-  </div>
-  <div class="w3-quarter">
-    <span class="w3-xxlarge">89+</span>
-    <br>Happy Clients
-  </div>
-  <div class="w3-quarter">
-    <span class="w3-xxlarge">150+</span>
-    <br>Meetings
-  </div>
-</div>-->
+        var closeMenu = function () {
+            var nav = document.getElementById('myNavbar');
 
-<!-- Flexible cleaning Section -->
-<div class="w3-container myColor" style="padding:108px 16px; padding-left:22%">
-  <div class="w3-row">
-    <div class="w3-col m8">
-      <h2>FLEXIBLE CLEANING</h2>
-      <h3>We offer weekly, bi-weekly, monthly or just one-time cleaning. We will customize cleaning schedule/plan that best fits your schedule in addition to your budget!</h3>
-    </div>
-  </div>
-</div>
-
-<!--Pricing Section
-<div class="w3-container w3-center  myColor" style="padding:128px 16px" id="pricing">
-  <h3>PRICING</h3>
-  <p class="w3-large">Choose a pricing plan that fits your needs.</p>
-  <div class="w3-row-padding" style="margin-top:64px">
-    <div class="w3-third w3-section">
-      <ul class="w3-ul w3-white w3-hover-shadow">
-        <li class="w3-black w3-xlarge w3-padding-32">Basic</li>
-        <li class="w3-padding-16"><b>10GB</b> Storage</li>
-        <li class="w3-padding-16"><b>10</b> Emails</li>
-        <li class="w3-padding-16"><b>10</b> Domains</li>
-        <li class="w3-padding-16"><b>Endless</b> Support</li>
-        <li class="w3-padding-16">
-          <h2 class="w3-wide">$ 10</h2>
-          <span class="w3-opacity">per month</span>
-        </li>
-        <li class="w3-light-grey w3-padding-24">
-          <button class="w3-button w3-black w3-padding-large">Sign Up</button>
-        </li>
-      </ul>
-    </div>
-    <div class="w3-third w3-section">
-      <ul class="w3-ul w3-white w3-hover-shadow">
-        <li class="w3-black w3-xlarge w3-padding-32">Pro</li>
-        <li class="w3-padding-16"><b>25GB</b> Storage</li>
-        <li class="w3-padding-16"><b>25</b> Emails</li>
-        <li class="w3-padding-16"><b>25</b> Domains</li>
-        <li class="w3-padding-16"><b>Endless</b> Support</li>
-        <li class="w3-padding-16">
-          <h2 class="w3-wide">$ 25</h2>
-          <span class="w3-opacity">per month</span>
-        </li>
-        <li class="w3-light-grey w3-padding-24">
-          <button class="w3-button w3-black w3-padding-large">Sign Up</button>
-        </li>
-      </ul>
-    </div>
-    <div class="w3-third w3-section">
-      <ul class="w3-ul w3-white w3-hover-shadow">
-        <li class="w3-black w3-xlarge w3-padding-32">Premium</li>
-        <li class="w3-padding-16"><b>50GB</b> Storage</li>
-        <li class="w3-padding-16"><b>50</b> Emails</li>
-        <li class="w3-padding-16"><b>50</b> Domains</li>
-        <li class="w3-padding-16"><b>Endless</b> Support</li>
-        <li class="w3-padding-16">
-          <h2 class="w3-wide">$ 50</h2>
-          <span class="w3-opacity">per month</span>
-        </li>
-        <li class="w3-light-grey w3-padding-24">
-          <button class="w3-button w3-black w3-padding-large">Sign Up</button>
-        </li>
-      </ul>
-    </div>
-  </div>
-</div>
--->
-
-<!-- Contact Section -->
-<div class="w3-container w3-light-grey w3-large" style="padding:128px 16px" id="contact">
-  <h3 class="w3-center">CONTACT</h3>
-  <p class="w3-center w3-large">Let's get in touch! Send us a message! We will be happy to hear from you!</p>
-  <div class="w3-row" style="margin-top:64px">
-	<div class="w3-col w3-container" style="width:25%"></div>
-    <div class="w3-col w3-container" style="width:50%">
-      <p><i class="fa fa-map-marker fa-fw w3-xxlarge w3-margin-right"></i> Roberta, GA</p>
-      <p><a class="NoUnderline" href="tel:478-258-7659"><i class="fa fa-phone fa-fw w3-xxlarge w3-margin-right"></i>478-258-7659</a></p>
-      <p><a class="NoUnderline" href="mailto:cody.lee1@mga.edu"><i class="fa fa-envelope fa-fw w3-xxlarge w3-margin-right"> </i> coco.leigh2015@gmail.com</a></p>
-	  <p><a class="NoUnderline" href="https://www.facebook.com/danielle.poteat.141210/?fref=ts" target="_blank"><i class="fa fa-facebook-official fa-fw w3-xxlarge w3-margin-right"></i>Facebook</a></p>
-      <br>
-      <!--<form action="mailto:cody.lee1@mga.edu">
-        <p><input class="w3-input w3-border" type="text" placeholder="Name" required name="Name"></p>
-        <p><input class="w3-input w3-border" type="text" placeholder="Email" required name="Email"></p>
-        <p><input class="w3-input w3-border" type="text" placeholder="Subject" required name="Subject"></p>
-        <p><input class="w3-input w3-border" type="text" placeholder="Message" required name="Message"></p>
-        <p>
-          <button class="myColor w3-bar-item w3-button1" type="submit">
-            <i class="fa fa-paper-plane"></i> SEND MESSAGE
-          </button>
-        </p>
-      </form>-->
-    </div>
-	<div class="w3-col w3-container" style="width:25%"></div>
-  </div>
-</div>
-
-<!-- Footer -->
-<footer class="w3-center myColor w3-padding-64 w3-large">
-  <a href="#home" class="w3-button1 w3-padding-33"><i class="fa fa-arrow-up w3-margin-right"></i>To the top</a>
-  <div class="w3-xlarge w3-section">
-    <a href="https://www.facebook.com/danielle.poteat.141210/?fref=ts" target="_blank"><i class="fa fa-facebook-official w3-hover-opacity"></i></a>
-  </div>
-  <!--<p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank" class="w3-hover-text-green">w3.css</a></p>-->
-</footer>
- 
-<!-- Add Google Maps -->
-<script>
-function myMap()
-{
-  myCenter=new google.maps.LatLng(41.878114, -87.629798);
-  var mapOptions= {
-    center:myCenter,
-    zoom:12, scrollwheel: false, draggable: false,
-    mapTypeId:google.maps.MapTypeId.ROADMAP
-  };
-  var map=new google.maps.Map(document.getElementById("googleMap"),mapOptions);
-
-  var marker = new google.maps.Marker({
-    position: myCenter,
-  });
-  marker.setMap(map);
-}
-
-// Modal Image Gallery
-function onClick(element) {
-  document.getElementById("img01").src = element.src;
-  document.getElementById("modal01").style.display = "block";
-  var captionText = document.getElementById("caption");
-  captionText.innerHTML = element.alt;
-}
-
-
-// Toggle between showing and hiding the sidebar when clicking the menu icon
-var mySidebar = document.getElementById("mySidebar");
-
-function w3_open() {
-    if (mySidebar.style.display === 'block') {
-        mySidebar.style.display = 'none';
-    } else {
-        mySidebar.style.display = 'block';
-    }
-}
-
-// Close the sidebar with the close button
-function w3_close() {
-    mySidebar.style.display = "none";
-}
-</script>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBu-916DdpKAjTmJNIgngS6HL_kDIKU0aU&callback=myMap"></script>
-<!--
-To use this code on your website, get a free API key from Google.
-Read more at: https://www.w3schools.com/graphics/google_maps_basic.asp
--->
-
+            nav.classList.remove('in');
+            document.body.scrollTop = 0; // For Chrome, Safari and Opera
+            document.documentElement.scrollTop = 0; // For IE and Firefox
+        }
+    </script>
 </body>
+
 </html>

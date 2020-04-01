@@ -39,17 +39,18 @@ body, html {
 	text-decoration:underline;
 }
 
-.italics{font-style:italic}
-.bold{font-weight:bold}
-.underline{text-decoration:underline;}
-.NeonGreen{color:#39ff14; text-shadow: 2px 2px black}
-
-table{
-	border-collapse: collapse;
+.italics{
+	font-style:italic
 }
-
-table, th, td{
-	border: 1px solid purple;
+.bold{
+	font-weight:bold
+}
+.underline{
+	text-decoration:underline;
+}
+.NeonGreen{
+	color:#39ff14; 
+	text-shadow: 2px 2px black;
 }
 
 td{
